@@ -1,0 +1,55 @@
+App.jsx
+-------
+
+import "./toggle.css";
+import React, { useState } from "react";
+const App = () => {
+  const [isOn, setIsOn] = useState(false);
+
+  const buttonStyle = {
+    backgroundColor: isOn ? '#4CAF50' : '#f44336',
+    color: 'white',
+    padding: '12px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    fontSize: '16px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+  };
+
+  return (
+    <div className="container">
+      <span className="label">Toggle is {isOn ? 'ON' : 'OFF'}</span>
+      <button style={buttonStyle} onClick={() => setIsOn(!isOn)}>
+        {isOn ? 'Turn OFF' : 'Turn ON'}
+      </button>
+    </div>
+  );
+
+}
+export default App
+
+TOggle.css
+---------
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.label {
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
